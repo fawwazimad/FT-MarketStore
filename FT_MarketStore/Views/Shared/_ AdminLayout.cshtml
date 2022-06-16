@@ -1,0 +1,216 @@
+﻿@{
+	var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+
+<!DOCTYPE html> 
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"> 
+    <link rel="stylesheet" href="~/assists/css/fontawesome.min.css"> 
+    <link rel="stylesheet" href="~/assists/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="~/assists/css/templatemo-style.css">   
+</head>
+<body>
+    @if (userId == null)
+	{
+        <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="https://localhost:5001/Admin/Index">
+                    <h1 class="tm-site-title mb-0">Dashboard</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://localhost:5001/Admin/Index">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Dashboard
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Reports <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">PDF</a>
+                                <a class="dropdown-item" href="#">Excel</a> 
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost:5001/Products/Index">
+                                <i class="fas fa-shopping-cart"></i>
+                                Products
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost:5001/Userrs/Index">
+                                <i class="far fa-user"></i>
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> 
+                                <span>
+                                 More <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://localhost:5001/Categories/Index">Categories</a>
+                                <a class="dropdown-item" href="https://localhost:5001/Stores/Index">Stores</a> 
+
+                            </div>
+                        </li>
+                    </ul>
+                     <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						<li><a class="nav-link" href="https://localhost:5001/Home/SignIn">Login</a></li>
+					</ul>
+                </div>
+            </div> 
+        </nav>
+
+        </div>
+
+
+    }
+
+
+    else
+    {
+         <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="https://localhost:5001/Admin/Index">
+                    <h1 class="tm-site-title mb-0">Dashboard</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://localhost:5001/Admin/Index">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Dashboard
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Reports <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">PDF</a>
+                                <a class="dropdown-item" href="#">Excel</a> 
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost:5001/Products/Index">
+                                <i class="fas fa-shopping-cart"></i>
+                                Products
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost:5001/Userrs/Index">
+                                <i class="far fa-user"></i>
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> 
+                                <span>
+                                 More <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://localhost:5001/Categories/Index">Categories</a>
+                                <a class="dropdown-item" href="https://localhost:5001/Stores/Index">Stores</a> 
+
+                            </div>
+                        </li>
+                    </ul>
+                     <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						<li><a class="nav-link" href="https://localhost:5001/Userrs/Details/@userId"><img src="~/assists2/images/user.svg"></a></li>
+					</ul>
+                </div>
+            </div> 
+        </nav>
+
+        </div>
+    }
+    <div>
+        @RenderBody()
+    </div>
+
+            <footer class="tm-footer row tm-mt-small">
+            <div class="col-12 font-weight-light">
+                <p class="text-center text-white mb-0 px-4 small">
+                    Copyright &copy; <b>2022</b> All rights reserved. 
+                    
+                    Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Tahaluf-FawazIssa</a>
+                </p>
+            </div>
+        </footer>
+
+
+         <script src="~/assists/js/jquery-3.3.1.min.js"></script> 
+    <script src="~/assists/js/moment.min.js"></script> 
+    <script src="~/assists/js/Chart.min.js"></script> 
+    <script src="~/assists/js/bootstrap.min.js"></script> 
+    <script src="~/assists/js/tooplate-scripts.js"></script>
+    <script>
+        Chart.defaults.global.defaultFontColor = 'white';
+        let ctxLine,
+            ctxBar,
+            ctxPie,
+            optionsLine,
+            optionsBar,
+            optionsPie,
+            configLine,
+            configBar,
+            configPie,
+            lineChart;
+        barChart, pieChart;
+        // DOM is ready
+        $(function () {
+            drawLineChart(); // Line Chart
+            drawBarChart(); // Bar Chart
+            drawPieChart(); // Pie Chart
+
+            $(window).resize(function () {
+                updateLineChart();
+                updateBarChart();                
+            });
+        })
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model FT_MarketStore.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+        var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+<br />
+<h1 style=" position:relative;left:210px; color:white">Details</h1>
+<br />  
+<div class="container tm-mt-big tm-mb-big" >
+    <h4 style="color:white" >Product</h4>
+    <hr/>
+    <dl style="color:white" class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductSale)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductSale)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductInfo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductInfo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Store)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductId" style="position:relative;left:215px;" class="btn btn-primary text-uppercase" >Edit</a> 
+        <br />
+    <br />
+    <br />
+    <a asp-action="Index" class="btn btn-primary btn-block text-uppercase">Back to List</a>
+</div>

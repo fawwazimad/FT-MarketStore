@@ -1,0 +1,69 @@
+﻿@model FT_MarketStore.Models.Store
+
+@{
+    ViewData["Title"] = "Details";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+
+    
+        var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+<br />
+<h1 style=" position:relative;left:210px; color:white">Details</h1>
+<br />  
+<div class="container tm-mt-big tm-mb-big" >
+    <h4 style="color:white" >Store</h4>
+    <hr/>
+    <dl style="color:white" class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StoreName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StoreImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StorePhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StorePhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StoreEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StoreCity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreCity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StoreInfo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StoreInfo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StoreId" style="position:relative;left:215px;" class="btn btn-primary text-uppercase" >Edit</a> 
+        <br />
+    <br />
+    <br />
+    <a asp-action="Index" class="btn btn-primary btn-block text-uppercase">Back to List</a>
+</div>

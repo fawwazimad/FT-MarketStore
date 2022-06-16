@@ -1,0 +1,29 @@
+﻿@model FT_MarketStore.Models.Rolee
+
+@{
+    ViewData["Title"] = "Details";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+}
+<br />
+<h1 style=" position:relative;left:210px; color:white">Details</h1>
+<br />  
+<div class="container tm-mt-big tm-mb-big" >
+    <h4 style="color:white" >Role</h4>
+    <hr/>
+    <dl style="color:white" class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RoleId" style="position:relative;left:215px;" class="btn btn-primary text-uppercase">Edit</a> 
+        <br />
+    <br />
+    <br />
+    <a asp-action="Index" class="btn btn-primary btn-block text-uppercase">Back to List</a>
+</div>

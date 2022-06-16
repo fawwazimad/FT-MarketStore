@@ -1,0 +1,64 @@
+﻿@model FT_MarketStore.Models.Store
+
+@{
+    ViewData["Title"] = "Create";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+    var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+
+<h1 style="position:relative;left:200px; color:white" >Create Store</h1> 
+<hr />
+<div class="container tm-mt-big tm-mb-big"> 
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StoreName" class="control-label"></label>
+                <input asp-for="StoreName" class="form-control" />
+                <span asp-validation-for="StoreName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreImage" class="control-label"></label>
+                <input asp-for="StoreImage" class="form-control" />
+                <span asp-validation-for="StoreImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StorePhone" class="control-label"></label>
+                <input asp-for="StorePhone" class="form-control" />
+                <span asp-validation-for="StorePhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreEmail" class="control-label"></label>
+                <input asp-for="StoreEmail" class="form-control" />
+                <span asp-validation-for="StoreEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreCity" class="control-label"></label>
+                <input asp-for="StoreCity" class="form-control" />
+                <span asp-validation-for="StoreCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreInfo" class="control-label"></label>
+                <input asp-for="StoreInfo" class="form-control" />
+                <span asp-validation-for="StoreInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreName" class="control-label"></label>
+                <select asp-for="Category.CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,46 @@
+﻿@model FT_MarketStore.Models.Userr
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+    
+        var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+<br />
+<h1 style=" position:relative;left:210px; color:white">Details</h1>
+<br />  
+<div class="container tm-mt-big tm-mb-big" >
+    <h4 style="color:white" >Customer</h4>
+    <hr/>
+    <dl style="color:white" class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserBalance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserBalance)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UserId" style="position:relative;left:215px;" class="btn btn-primary text-uppercase" >Edit</a>  
+    <br/>
+    <br/>
+    <br/>
+    <a asp-action="Index" class="btn btn-primary btn-block text-uppercase" >Back to List</a>
+
+    <a asp-action="Logout" class="btn btn-primary btn-block text-uppercase" >Logout</a>
+
+</div>

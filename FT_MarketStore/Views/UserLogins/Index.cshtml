@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FT_MarketStore.Models.UserLogin>
+
+@{
+    ViewData["Title"] = "Index";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+}
+
+<h1 style="position:relative;left:50px; color:white" >User Logins</h1>
+
+<br />
+<p>
+    <a asp-action="Create" style="position:relative;left:50px;" class="btn btn-primary">Create New</a>
+</p>
+<table style="position:relative;left:50px;" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passwordd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passwordd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LoginId" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.LoginId" class="btn btn-primary">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.LoginId" class="btn btn-primary" >Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

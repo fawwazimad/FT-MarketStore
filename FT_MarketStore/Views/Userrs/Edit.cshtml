@@ -1,0 +1,46 @@
+﻿@model FT_MarketStore.Models.Userr
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+    
+        var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+<br />
+<h1 style="position:relative;left:50px; color:white">Edit Customer</h1>
+<hr />
+<div class="container tm-mt-big tm-mb-big"> 
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" />
+            <div class="form-group">
+                <label asp-for="Fname" class="control-label"></label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lname" class="control-label"></label>
+                <input asp-for="Lname" class="form-control" />
+                <span asp-validation-for="Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserBalance" class="control-label"></label>
+                <input asp-for="UserBalance" class="form-control" />
+                <span asp-validation-for="UserBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary btn-block text-uppercase" >Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

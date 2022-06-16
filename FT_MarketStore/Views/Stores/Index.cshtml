@@ -1,0 +1,77 @@
+﻿@model IEnumerable<FT_MarketStore.Models.Store>
+
+@{
+    ViewData["Title"] = "Index";
+        
+    Layout = "~/Views/Shared/_ AdminLayout.cshtml";
+    
+        var roleId = ViewBag.RoleId;
+	var userId = ViewBag.userId; 
+}
+
+<h1 style="position:relative;left:50px; color:white" >Stores</h1>
+
+<br />
+<p>
+    <a asp-action="Create" style="position:relative;left:50px;" class="btn btn-primary">Create New</a>
+</p>
+<table style="position:relative;left:50px;" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StorePhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StoreId" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.StoreId" class="btn btn-primary">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.StoreId" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
